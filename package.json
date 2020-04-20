@@ -2,12 +2,12 @@
   "name": "anydoor",
   "version": "1.0.0",
   "description": "nodeJs 静态资源服务器",
-  "main": "/src/index.js",
-  "devDependencies": {
-    "babel-eslint": "^10.1.0",
-    "eslint": "^6.8.0",
-    "pre-commit": "^1.2.2"
-  },
+  "main": "/src/app.js",
+  "author": "li_shifeng",
+  "license": "MIT",
+  "keywords": [
+    "nodeJs"
+  ],
   "scripts": {
     "lint": "eslint .",
     "fix": "eslint --fix ."
@@ -16,15 +16,19 @@
     "fix",
     "lint"
   ],
+  "dependencies": {
+    "chalk": "^4.0.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.8.0",
+    "pre-commit": "^1.2.2",
+    "supervisor": "^0.12.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/li-shifeng/anydoor.git"
   },
-  "keywords": [
-    "nodeJs"
-  ],
-  "author": "li_shifeng",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/li-shifeng/anydoor/issues"
   },
