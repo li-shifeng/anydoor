@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{title}}</title>
+    <link
+      rel="shortcut icon"
+      href="{{tplDir}}/../../favicon.ico"
+      type="image/x-icon"
+    />
+    <style>
+      a {
+        display: inline-block;
+        padding: 5px 10px;
+        text-decoration: none;
+        color: #333;
+        font-size: 16px;
+      }
+      a:hover {
+        background-color: #eee;
+        border-radius: 2px;
+      }
+      .icon {
+        width: 1em;
+        height: 1em;
+        vertical-align: -0.15em;
+        fill: currentColor;
+        overflow: hidden;
+      }
+      .up-dir {
+        padding: 10px 0;
+      }
+      .files-wrapper {
+        display: flex;
+        flex-direction: column;
+      }
+    </style>
+  </head>
+  <body>
+    {{#if dir}}
+    <div class="up-dir">
+      <a href="{{dir}}/../">
+        <svg class="icon" aria-hidden="true">
+          <use xlink:href="#icon-arrow-up"></use>
+        </svg>
+        向上一级
+      </a>
+    </div>
+    {{/if}}
+    <div class="files-wrapper">
+      {{#each files}}
+      <div>
+        <a href="{{../dir}}/{{file}}">
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#{{icon}}"></use>
+          </svg>
+          {{file}}
+        </a>
+      </div>
+      {{/each}}
+    </div>
+
+    <script src="{{tplDir}}/../resource/iconfont/iconfont.js"></script>
+  </body>
+</html>
