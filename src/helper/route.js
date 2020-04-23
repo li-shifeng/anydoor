@@ -23,13 +23,16 @@ module.exports = async function (req, res, filePath) {
     if (stats.isFile()) {
       // 访问的是文件
       res.statusCode = 200
-      res.setHeader('Content-Type', mime(filePath).contentType)
+      res.setHeader(
+        'Content-Type',
+        `${mime(filePath).contentType}; charset=utf-8`
+      )
       fs.createReadStream(filePath).pipe(res)
     } else if (stats.isDirectory()) {
       // 访问的是文件夹
       const files = await readdir(filePath)
       res.statusCode = 200
-      res.setHeader('Content-Type', 'text/html')
+      res.setHeader('Content-Type', 'text/html; charset=utf-8')
 
       // path.relative(from, to) 返回从 from 到 to 的相对路径；若两个路径相同，返回空字符串
       // path.relative('/anydoor', '/anydoor') // => ""

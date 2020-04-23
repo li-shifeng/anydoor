@@ -14,4 +14,4 @@
 
 ## 遇到的问题
 
-* 使用 createReadStream 读取文件内容时，中文注释显示乱码（选择 utf8bom 编码保存文件可解决）
+* 使用 createReadStream 读取文件内容时，中文注释显示乱码（在 Content-Type 值的后面指定编码格式，如：`'Content-Type': 'text/html; charset=utf-8'`）
