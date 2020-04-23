@@ -1,0 +1,25 @@
+{
+  // 使用 IntelliSense 了解相关属性。
+  // 悬停以查看现有属性的描述。
+  // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "debugger anydoor",
+      "skipFiles": ["<node_internals>/**"],
+      // ${workspaceFolder} 给出工作区文件夹的根路径
+      // ${file} 在活动编辑器中打开的文件
+      "program": "${file}", // 对当前打开的文件进行调试
+      // "program": "${workspaceFolder}/src/app.js", // 对指定的文件进行调试
+      // stopOnEntry 程序启动时立即中断（同 --inspect-brk）
+      "stopOnEntry": true,
+      // 调试服务器程序时自动打开URI
+      // 开发Web程序通常需要在Web浏览器中打开特定的URL，以便在调试器中命中服务器代码
+      "serverReadyAction": {
+        "action": "openExternally"
+      }
+    }
+  ]
+}
