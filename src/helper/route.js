@@ -6,6 +6,7 @@ const stat = promisify(fs.stat)
 const readdir = promisify(fs.readdir)
 const conf = require('../config/defaultConfig')
 const mime = require('../helper/mime')
+const compress = require('./compress')
 
 // process.cwd() 是运行 node 命令的根路径
 // __dirname 是当前文件的路径
@@ -27,7 +28,11 @@ module.exports = async function (req, res, filePath) {
         'Content-Type',
         `${mime(filePath).contentType}; charset=utf-8`
       )
-      fs.createReadStream(filePath).pipe(res)
+      let rs = fs.createReadStream(filePath)
+      if (filePath.match(conf.compress)) {
+        rs = compress(rs, req, res)
+      }
+      rs.pipe(res)
     } else if (stats.isDirectory()) {
       // 访问的是文件夹
       const files = await readdir(filePath)

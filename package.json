@@ -10,7 +10,8 @@
   ],
   "scripts": {
     "lint": "eslint .",
-    "fix": "eslint --fix ."
+    "fix": "eslint --fix .",
+    "serve": "node src/app"
   },
   "pre-commit": [
     "fix",
