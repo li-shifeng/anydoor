@@ -8,6 +8,7 @@ const conf = require('../config/defaultConfig')
 const mime = require('../helper/mime')
 const compress = require('./compress')
 const range = require('./range')
+const isFresh = require('./cache')
 
 // process.cwd() 是运行 node 命令的根路径
 // __dirname 是当前文件的路径
@@ -28,6 +29,13 @@ module.exports = async function (req, res, filePath) {
         'Content-Type',
         `${mime(filePath).contentType}; charset=utf-8`
       )
+
+      if (isFresh(stats, req, res)) {
+        res.statusCode = 304
+        res.end()
+        return
+      }
+
       let rs
       const { code, start, end } = range(stats.size, req, res)
       if (code === 200) {
