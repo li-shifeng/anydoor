@@ -6,7 +6,7 @@
 
 ## 项目示例
 
-![项目示例](https://raw.githubusercontent.com/li-shifeng/anydoor/master/src/resource/img/example.png?token=AFKNBWSWYMJSULUPNSK4P7S6UKFS4)
+![](https://github.com/li-shifeng/anydoor/blob/master/src/resource/img/example.png?raw=true)
 
 ### 解决 GitHub 上图片不显示的问题
 
