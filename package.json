@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "nodeJs 静态资源服务器",
   "main": "/src/app.js",
+  "bin": {
+    "anydoor": "bin/anydoor"
+  },
   "author": "li_shifeng",
   "license": "MIT",
   "keywords": [
@@ -11,7 +14,7 @@
   "scripts": {
     "lint": "eslint .",
     "fix": "eslint --fix .",
-    "serve": "node src/app"
+    "serve": "node src/index"
   },
   "pre-commit": [
     "fix",
@@ -19,7 +22,8 @@
   ],
   "dependencies": {
     "chalk": "^4.0.0",
-    "handlebars": "^4.7.6"
+    "handlebars": "^4.7.6",
+    "yargs": "^15.3.1"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",

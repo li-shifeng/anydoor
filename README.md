@@ -25,3 +25,20 @@
 ## 遇到的问题
 
 * 使用 createReadStream 读取文件内容时，中文注释显示乱码（在 Content-Type 值的后面指定编码格式，如：`'Content-Type': 'text/html; charset=utf-8'`）
+
+**注：由于未上传至 npm ，以下安装和使用方法相关功能暂未实现，可访问教程原作者的 anydoor 看效果，或本地使用 `node src/index` 或 `npm run serve` 命令启动查看**
+
+## 安装
+
+```
+npm install -g anydoor
+```
+
+## 使用方法
+
+```
+anydoor # 把当前文件夹作为静态资源服务器根目录
+anydoor -p 8080 # 设置端口号为 8080
+anydoor -h localhost # 设置 host 为 localhost
+anydoor -d /usr # 设置根目录为 /usr
+```
